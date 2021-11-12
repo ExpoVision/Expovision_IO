@@ -1,0 +1,69 @@
+@import '__vars';
+
+// .header-nav__link::after {
+//     display: block;
+//     content: attr(title);
+//     font-weight: bold;
+//     height: 0;
+//     overflow: hidden;
+//     visibility: hidden;
+// }
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    padding: 0 $default-padding;
+    height: 78px;
+
+    font-family: $montserrat;
+    border-bottom: 1px solid #9696962a;
+
+    &-logo {
+        max-width: 192px;
+        position: relative;
+        top: 23px;
+        background: url('/assets/logo.png') no-repeat;
+        width: 192px;
+        height: 27px;
+    }
+
+    &-nav {
+        color: #fff;
+        position: relative;
+        margin: 0 auto;
+        left: -5rem;
+
+        display: flex;
+        align-items: stretch;
+        gap: 2em;
+
+        &__link {
+            letter-spacing: 0.1em;
+
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &:hover {
+                font-weight: bold;
+            }
+
+            &:hover::before {
+                background: $default-blue;
+            }
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+            }
+        }
+    }
+}

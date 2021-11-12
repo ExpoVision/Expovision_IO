@@ -1,0 +1,384 @@
+@import "../_vars";
+
+body {
+    margin: 0;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    //background-size: auto, cover, cover !important;
+    background-position: center;
+}
+
+.home-title.about-blur__description {
+    width: 100%;
+}
+
+.section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.services-slider {
+    display: none;;
+}
+.home {
+    background: linear-gradient(
+        90deg, rgba(0, 15, 73, 0.79) 11.35%, rgba(0, 20, 89, 0.17) 50%);
+}
+div#scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; 
+
+    & .scene_image {
+        width: 1920px;
+        height: 1080px;
+    }
+
+    & .backdrop-effect {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    & .backdrop-effect.glasses {
+        background-position: center;
+        background-size: 110%;
+    }
+
+    & > div:first-child {
+        top: -15%!important;
+        left: -15%!important;
+    }
+}
+
+.content-frame {
+    padding: 2em $default-padding;
+}
+
+.about-blur__title {
+    font-size: 2.5em;
+    font-family: $michroma;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+}
+
+.about-blur__description {
+    font-family: $montserrat;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+.filter-select::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    right: -5%;
+    top: 12%;
+    background: #ededed;
+}
+
+.filter {
+    display: flex;
+    background: #f9f9f9;
+    border-radius: 5px;
+    width: 100%;
+    margin: auto;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: $montserrat;
+}
+
+.filter-select__dropdown__item__input {
+    border: none;
+    outline: none;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    background: #f9f9f9;
+    font-family: $montserrat;
+}
+
+.filter-select::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    top: 46%;
+    background: url("/assets/vectors/arrow.svg") no-repeat;
+    right: 6px;
+}
+
+.filter-select {
+    position: relative;
+    padding: 2em;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter-submit__label {
+    cursor: pointer;
+}
+
+.filter-submit {
+    padding: 2em 2.5em;
+    position: relative;
+    top: 0px;
+    left: 17px;
+    border-radius: 5px;
+    margin: 0;
+    transition: 0.15s;
+    cursor: pointer;
+
+    &:hover {
+        background: $default-blue;
+    }
+
+    &:hover svg path {
+        fill: #fff;
+    }
+}
+
+.filter-select:hover {
+    border: 1px solid #ededed;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.filter-select:hover .filter-select__dropdown {
+    border: 1px solid #ededed;
+    border-top: 0;
+}
+
+.filter-select {
+    border: 1px solid transparent;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.filter-select__dropdown {
+    border: 1px solid transparent;
+}
+
+.filter-select__dropdown {
+    display: none;
+    position: absolute;
+    width: 101%;
+    top: 100%;
+    z-index: 2;
+    background: #fff;
+    left: -1px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 0.5em 2em;
+}
+
+.filter-select__selected {
+    text-transform: uppercase;
+}
+
+.filter-select:hover > .filter-select__dropdown {
+    display: block;
+}
+.filter-select:hover {
+    background: #fff;
+}
+
+.filter-select__dropdown__item {
+    margin: 0.8em 0;
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.filter-select__dropdown__item::before {
+    content: "";
+    display: block;
+    border-radius: 5px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid #0074ff;
+    margin-right: 0.8em;
+}
+
+.filter-select__dropdown__item_checked::after {
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: #0073ff;
+    border-radius: 5px;
+    left: 3px;
+}
+
+.filter-select__dropdown__item:hover {
+    color: #0073ff;
+}
+
+.filter-select:nth-child(4) {
+    min-width: 280px;
+}
+
+.filter-select:nth-child(5) {
+    min-width: 256px;
+
+    &::before {
+        content: unset;
+    }
+}
+
+.filter-select:nth-child(3) {
+    min-width: 200px;
+}
+
+.content-side {
+    margin-top: 2rem;
+    width: 300px;
+}
+
+.offer-info__address {
+    margin: 1em 0;
+    color: #fff;
+    font-family: $montserrat;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 1.6em 0;
+}
+
+.offer-info__address::before {
+    content: "";
+    top: 4px;
+    position: relative;
+    display: inline-block;
+    width: 13px;
+    margin-right: 0.5em;
+    height: 20px;
+    background: url(/assets/vectors/map-mark.svg) no-repeat;
+}
+
+.content__3dview {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: $montserrat;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-color: $default-blue;
+}
+
+.content__title {
+    margin-top: 1em;
+    color: #fff;
+    font-family: "Michroma";
+    font-size: 22px;
+}
+
+.content__3dview::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5em;
+    position: relative;
+    background: url("/assets/vectors/3d-view-blue.svg");
+    top: 7px;
+}
+
+.offer-info__properties {
+    letter-spacing: 0.2em;
+    color: #fff;
+    font-family: $montserrat;
+}
+
+.offer-info__properties__property {
+    margin-bottom: 0.2em;
+}
+
+.offer-info__footer__price {
+    font-family: $michroma;
+    color: #fff;
+    font-size: 20px;
+}
+
+.offer-info__footer__price::before {
+    content: "$";
+    color: #0073ff;
+    margin-right: 0.1em;
+}
+
+.property-line {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    margin-top: 2.4rem;
+}
+
+.property-line > * {
+    margin-right: 2em;
+}
+
+.property-line__link:last-child {
+    margin-left: auto;
+}
+
+.property-line__link:last-child::after {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 12px;
+    transform: rotate(270deg);
+    margin-left: 1em;
+    background: url("/assets/vectors/arrow.svg") no-repeat;
+}
+
+.property-line__link {
+    font-family: "Montserrat";
+    text-transform: uppercase;
+}
+
+.property-line__link:nth-child(2) {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: #0073ff;
+}
+
+.image-slider-control {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.image-slider-control__image {
+    width: 66px;
+    height: 90px;
+    border-radius: 5px;
+    object-fit: cover;
+    opacity: .5;
+    cursor: pointer;
+    margin-right: 0.6em;
+}
+
+.image-slider-control__image_active {
+    width: 82px;
+    height: 112px;
+    opacity: 1;
+}
+
+.content-side__bottom {
+    margin-top: 4.6rem;
+}

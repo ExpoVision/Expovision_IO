@@ -1,0 +1,81 @@
+@import "../_vars";
+
+.about {
+    background: url("/assets/pages/about.png");
+    background-size: cover;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.gradient-layout-shit {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(360deg, rgba(33, 57, 142, 0.1) 79.49%, rgba(4, 21, 80, 0.6) 100%);
+    z-index: -1;
+}
+
+.dirty-shit {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    &__right {
+        width: 45%;
+        height: 150%;
+        position: relative;
+        backdrop-filter: blur(20px);
+        top: -32%;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+.about-blur {
+    padding-left: 3rem;
+    color: #fff;
+    font-family: $montserrat;
+
+    &__title {
+        font-size: 2.5em;
+        font-family: $michroma;
+        font-weight: 400;
+    }
+
+    &__description {
+        width: 80%;
+        word-break: word-break;
+        line-height: 30px;
+        font-weight: 500;
+    }
+
+    & > p,
+    & > div {
+        margin-bottom: 24px;
+    }
+}
+
+.partners {
+    &-invest {
+        border-left: 3px solid #fff;
+        padding-left: 2em;
+        width: 90%;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    &-icons {
+        margin-top: 2.5em;
+        display: flex;
+        justify-content: space-between;
+    }
+}

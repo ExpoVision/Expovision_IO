@@ -1,0 +1,146 @@
+@import "../__vars";
+
+.contact-us {
+    width: 100vw;
+    background: url("/assets/pages/contact-us.png") no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    height: 100vh;
+}
+
+.blur-layout-shit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #001a58;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.contacts-title {
+    color: #fff;
+    font-family: $michroma;
+    font-weight: 400;
+    text-align: center;
+    font-size: 2em;
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.contacts-title-description {
+    font-family: $montserrat;
+    font-size: 1.2em;
+    color: #fff;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.contact-us-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form-group {
+    min-width: 380px;
+    margin-bottom: 40px;
+
+    &:last-child {
+        text-align: end;
+    }
+}
+
+.contact-form {
+    &__input {
+        display: block;
+        background: transparent;
+        outline: none;
+        border: 1px solid $default-blue;
+        font-family: $montserrat;
+        padding: 18px 28px;
+        border-radius: 5px;
+        color: #fff;
+        margin-top: 12px;
+        width: 100%;
+
+        &::placeholder {
+            font-family: $montserrat;
+            color: #fff;
+            opacity: 0.3;
+        }
+    }
+
+    &__label {
+        color: #fff;
+        font-family: $montserrat;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+}
+
+.contact-form__submit {
+    color: #fff;
+    font-family: $montserrat;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 15px;
+        position: relative;
+        height: 8px;
+        background: url("/assets/vectors/arrow.svg") no-repeat;
+        transform: rotate(270deg);
+        top: -2px;
+        margin-left: 0.5em;
+    }
+}
+
+.feedback-row {
+    &__icons {
+        display: flex;
+        align-items: center;
+
+        &__icon {
+            margin-right: 2em;
+        }
+    }
+
+    &:last-child {
+        margin-top: 60px;
+    }
+
+    &__ions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__label {
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 40px;
+        font-family: $michroma;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 22px;
+            height: 18px;
+            background: url("/assets/vectors/email.svg") no-repeat;
+            background-size: contain;
+            margin-right: 1em;
+            position: relative;
+            top: 2px;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+@import '__vars';
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+body {
+    margin: 0;
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+    // display: none;
+}

@@ -1,0 +1,407 @@
+@import "../__vars";
+
+.content-frame {
+    padding: 2em $default-padding;
+}
+
+div.header-logo {
+    background: url("/assets/logo-dark.png");
+}
+nav.header-nav {
+    color: #131313;
+}
+form.filter.show-filter {
+    display: flex !important;
+    position: absolute;
+    top: 3em;
+    z-index: 5;
+    width: 80%;
+    left: 9%;
+}
+
+.properties-header {
+    font-size: 30px;
+    font-family: $michroma;
+    font-weight: 400;
+    text-align: center;
+}
+
+.breadcrumbs {
+    display: flex;
+    font-size: 14px;
+
+    &__crumb {
+        font-weight: 600;
+        font-family: $montserrat;
+        color: #626262;
+
+        &:last-child {
+            color: #c2c2c2;
+            font-weight: 400;
+        }
+
+        &::after {
+            content: "/";
+            margin: 0.5em;
+            color: #c2c2c2;
+        }
+    }
+}
+
+.filter {
+    display: flex;
+    background: #f9f9f9;
+    border-radius: 5px;
+    width: 100%;
+    margin: auto;
+    font-size: 14px;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: $montserrat;
+}
+
+.filter-select__dropdown__item__input {
+    border: none;
+    outline: none;
+    padding: 1em;
+    margin-bottom: 1.5em;
+    width: 100%;
+    background: #f9f9f9;
+    font-family: $montserrat;
+}
+
+.filter-select::after {
+    content: "";
+    display: inline-block;
+    width: 15px;
+    height: 8px;
+    position: absolute;
+    top: 46%;
+    background: url("/assets/vectors/arrow.svg") no-repeat;
+    right: 6px;
+}
+
+.filter-select {
+    position: relative;
+    padding: 2em;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.filter-submit__label {
+    cursor: pointer;
+}
+
+.filter-submit {
+    padding: 2em 2.5em;
+    position: relative;
+    top: 0px;
+    left: 17px;
+    border-radius: 5px;
+    margin: 0;
+    transition: 0.15s;
+    cursor: pointer;
+
+    &:hover {
+        background: $default-blue;
+    }
+
+    &:hover svg path {
+        fill: #fff;
+    }
+}
+
+.filter-select:hover {
+    border: 1px solid #ededed;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.filter-select:hover .filter-select__dropdown {
+    border: 1px solid #ededed;
+    border-top: 0;
+}
+
+.filter-select {
+    border: 1px solid transparent;
+    border-bottom: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.filter-select__dropdown {
+    border: 1px solid transparent;
+}
+
+.filter-select__dropdown {
+    display: none;
+    position: absolute;
+    width: 101%;
+    top: 100%;
+    z-index: 2;
+    background: #fff;
+    left: -1px;
+    border-radius: 5px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 0.5em 2em;
+}
+
+.filter-select__selected {
+    text-transform: uppercase;
+}
+
+.filter-select:hover > .filter-select__dropdown {
+    display: block;
+}
+.filter-select:hover {
+    background: #fff;
+}
+
+.filter-select__dropdown__item {
+    margin: 0.8em 0;
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.filter-select__dropdown__item::before {
+    content: "";
+    display: block;
+    border-radius: 5px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 1px solid #0074ff;
+    margin-right: 0.8em;
+}
+
+.filter-select__dropdown__item_checked::after {
+    display: block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: #0073ff;
+    border-radius: 5px;
+    left: 3px;
+}
+
+.filter-select__dropdown__item:hover {
+    color: #0073ff;
+}
+
+.filter-select:nth-child(4) {
+    min-width: 280px;
+}
+
+.filter-select:nth-child(5) {
+    min-width: 256px;
+
+    &::before {
+        content: unset;
+    }
+}
+
+.filter-select:nth-child(3) {
+    min-width: 200px;
+}
+.properties {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.filter-select::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 80%;
+    right: -5%;
+    top: 12%;
+    background: #ededed;
+}
+.how-much {
+    margin: 3em 0;
+    color: #a0a0a0;
+    font-family: $montserrat;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.offer {
+    flex-direction: column;
+    width: 512px;
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+
+    &-image {
+        border-radius: 6px;
+
+        &__image {
+            width: 100%;
+        }
+
+        &__3d-view {
+            position: absolute;
+            top: 16px;
+            right: 32px;
+            color: #fff;
+            font-family: $montserrat;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: 4px;
+                margin-right: 0.5em;
+                background: url("/assets/vectors/3d-view.svg");
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &-info {
+        padding: 2.2rem 1em;
+        color: #131313;
+        font-family: $montserrat;
+
+        &__title {
+            font-family: $michroma;
+            font-size: 28px;
+        }
+
+        &__address {
+            margin: 1em 0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+
+            &::before {
+                content: "";
+                top: 4px;
+                position: relative;
+                display: inline-block;
+                width: 13px;
+                margin-right: 0.5em;
+                height: 20px;
+                background: url("/assets/vectors/map-mark.svg") no-repeat;
+            }
+        }
+
+        &__properties {
+            letter-spacing: 0.2em;
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 18px;
+            text-transform: uppercase;
+
+            &__price {
+                font-family: $michroma;
+                font-size: 20px;
+
+                &::before {
+                    content: "\0024";
+                    color: $default-blue;
+                    margin-right: 0.1em;
+                }
+            }
+
+            &__tolink {
+                font-weight: 500;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 15px;
+                    position: relative;
+                    top: -2px;
+                    height: 8px;
+                    background: url(/assets/vectors/arrow.svg) no-repeat;
+                    margin-left: 0.5em;
+                    transform: rotate(270deg);
+                }
+            }
+        }
+    }
+}
+
+.sort-select.filter-select {
+    padding: 1em 2em;
+    width: 270px;
+    text-transform: uppercase;
+    font-family: $montserrat;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-style: dashed;
+    text-decoration-color: $default-blue;
+}
+.sort-select.filter-select::before {
+    content: unset;
+}
+.sort-select__dropdown__item.filter-select__dropdown__item::before {
+    content: unset;
+}
+.sort-select__dropdown__item.filter-select__dropdown__item.filter-select__dropdown__item_checked::after {
+    content: unset;
+}
+.sort-select.filter-select::after {
+    content: unset;
+}
+.sort-select__dropdown__item.filter-select__dropdown__item {
+    margin: 1.6em 0;
+}
+.sort-select__label {
+    cursor: pointer;
+}
+
+.sort-filter__dropdown__selected.filter-select__dropdown__item {
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Montserrat;
+    text-transform: uppercase;
+}
+.sort-filter__dropdown__selected.filter-select__dropdown__item::before {
+    content: unset;
+}
+.sort-filter__dropdown__selected.filter-select__dropdown__item::after {
+    content: unset;
+}
+.sort-select__label div {
+    margin: 1em 0;
+}
+.sort-select__label:hover div {
+    color: #0075ff;
+}
+.sort-select__selected.filter-select__selected::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 19px;
+    background: url("/assets/vectors/exchange.svg") no-repeat;
+    background-size: contain;
+    position: relative;
+    top: 6px;
+    margin-right: 0.5em;
+    transform: rotate(90deg);
+}
+.sort-wrapper {
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

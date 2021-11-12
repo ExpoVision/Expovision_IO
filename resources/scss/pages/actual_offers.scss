@@ -1,0 +1,205 @@
+@import "../_vars";
+
+.actual-offers {
+    background: url("/assets/pages/actual-offers.png");
+    background-size: cover;
+}
+
+.swiper-scale-effect .swiper-slide-cover {
+    transition: 10s ease-out;
+    transform: scale(1.2);
+}
+
+.swiper-scale-effect .swiper-slide.swiper-slide-active .swiper-slide-cover {
+    transform: scale(1);
+}
+
+.radial-gradient-layout {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(25px);
+    background: -moz-radial-gradient(circle at 50% 80%, rgb(33, 57, 142, 85%) 0%, rgb(3, 14, 50, 85%) 32%);
+    background: -webkit-radial-gradient(circle at 50% 80%, rgb(33, 57, 142, 85%) 0%, rgb(3, 14, 50, 85%) 32%);
+    background: -o-radial-gradient(circle at 50% 80%, rgb(33, 57, 142, 85%) 0%, rgb(3, 14, 50, 85%) 32%);
+    background: -ms-radial-gradient(circle at 50% 80%, rgb(33, 57, 142, 85%) 0%, rgb(3, 14, 50, 85%) 32%);
+    background: radial-gradient(circle at 50% 80%, rgb(33, 57, 142, 85%) 0%, rgb(3, 14, 50, 85%) 32%);
+}
+
+.actual-services-title {
+    color: #fff;
+    text-align: center;
+    font-family: $michroma;
+    font-weight: 400;
+    margin: 2.5rem auto;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+    transition: 0.2s;
+
+    &-wrapper {
+        align-items: center;
+    }
+
+    &-slide {
+        opacity: 0.3;
+
+        &-active {
+            opacity: 1;
+        }
+    }
+}
+
+.offer {
+    flex-direction: column;
+
+    &-image {
+        border-radius: 6px;
+        position: relative;
+        
+        &__image {
+            width: 100%;
+        }
+
+        &__3d-view {
+            position: absolute;
+            top: 16px;
+            right: 32px;
+            color: #fff;
+            font-family: $montserrat;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                position: relative;
+                top: 4px;
+                margin-right: 0.5em;
+                background: url("/assets/vectors/3d-view.svg");
+                background-repeat: no-repeat;
+            }
+        }
+    }
+
+    &-info {
+        padding: 2.2rem 1em;
+        color: #fff;
+        border: 1px solid;
+        border-image-slice: 1;
+        font-family: $montserrat;
+        border-image-source: linear-gradient(0deg, #0073ff 0%, #00c5ff00 70%);
+        
+        &__footer {
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+
+        &__title {
+            font-family: $michroma;
+            font-size: 28px;
+        }
+
+        &__address {
+            margin: 1em 0;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+
+            &::before {
+                content: "";
+                top: 4px;
+                position: relative;
+                display: inline-block;
+                width: 13px;
+                margin-right: 0.5em;
+                height: 20px;
+                background: url("/assets/vectors/map-mark.svg") no-repeat;
+            }
+        }
+
+        &__properties {
+            letter-spacing: 0.2em;
+        }
+
+        &__footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 18px;
+            text-transform: uppercase;
+
+            &__price {
+                font-family: $michroma;
+                font-size: 20px;
+
+                &::before {
+                    content: "\0024";
+                    color: $default-blue;
+                    margin-right: 0.1em;
+                }
+            }
+
+            &__tolink {
+                font-weight: 500;
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    width: 15px;
+                    position: relative;
+                    top: -2px;
+                    height: 8px;
+                    background: url(/assets/vectors/arrow.svg) no-repeat;
+                    margin-left: 0.5em;
+                    transform: rotate(270deg);
+                }
+            }
+        }
+    }
+}
+
+.button-next,
+.button-prev {
+    width: 64px;
+    height: 64px;
+    background: $default-blue;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    z-index: 3;
+    filter: drop-shadow(0px 20px 20px rgba(7, 23, 65, 0.5));
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+        content: "";
+        display: block;
+        background: url("/assets/vectors/arrow_left.svg") no-repeat;
+        width: 11px;
+        height: 15px;
+    }
+}
+
+.button-next {
+    left: 28%;
+}
+
+.button-prev {
+    right: 28%;
+}
+
+.button-next::after {
+    transform: rotate(180deg);
+}

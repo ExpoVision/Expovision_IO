@@ -1,0 +1,385 @@
+@import "../__vars";
+
+div.header-logo {
+    background: url("/assets/logo-dark.png");
+}
+nav.header-nav {
+    color: #131313;
+}
+.small {
+    width: 25%;
+}
+
+.big {
+    width: 80%;
+}
+
+.medium {
+    width: 50%;
+}
+
+.disabled {
+    opacity: .4;
+}
+
+.expo-select {
+    position: relative;
+    background: #f9f9f9;
+    padding: 1.6em;
+    border: 1px solid transparent;
+    font-family: $montserrat;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.1s;
+
+    &__dropdown {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: none;
+        position: absolute;
+        width: 101%;
+        background: inherit;
+        left: -1px;
+        top: 70%;
+        padding: inherit;
+        z-index: 2;
+    }
+
+    &__selected {
+        color: $default-blue;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 47%;
+            right: 16px;
+            display: inline-block;
+            width: 15px;
+            height: 8px;
+            background: url(/assets/vectors/arrow.svg) no-repeat;
+        }
+    }
+
+    &:hover {
+        border: 1px solid #ededed;
+        background-color: #fff;
+        border-bottom: none;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:hover &__dropdown {
+        display: block;
+        background-color: #fff;
+        border: 1px solid #ededed;
+        border-top: none;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+
+.share-form-label__input + .expo-select {
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 150px;
+}
+
+.share-form-label__input {
+    padding: 1.6em;
+    border-radius: 5px;
+    outline: none;
+    background: #f9f9f9;
+    border: 1px solid #f9f9f9;
+    width: 100%;
+
+    &:focus {
+        border: 1px solid $default-blue;
+    }
+}
+
+.share-form-wrong-input {
+    border: 1px solid red !important;
+}
+
+.share-form-wrong-input:focus {
+    border: 1px solid red !important;
+}
+
+.share-form-label__input-element {
+    position: absolute;
+    top: 37%;
+    right: 16px;
+}
+
+.share-form-label__input {
+    font-size: 16px;
+    font-family: $montserrat;
+}
+
+.share-form-label__input::placeholder {
+    color: #c4c4c4;
+}
+
+.share-form-label {
+    font-size: 16px;
+    font-family: $montserrat;
+}
+
+.share-form-label__input-element__price {
+    margin-left: 0.6em;
+    color: #000;
+}
+
+.share-form-label__input-element {
+    color: #c4c4c4;
+}
+
+.expo-select__dropdown__item {
+    margin-bottom: 1em;
+    list-style: none;
+
+    & svg path {
+        fill: $default-blue;
+    }
+
+    &:hover,
+    &:hover svg path {
+        fill: $default-blue;
+        color: $default-blue;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    & svg {
+        margin-left: 0.5em;
+    }
+}
+
+.share-form-label__description {
+    position: absolute;
+    font-family: "Montserrat";
+    bottom: -1.6em;
+    left: 0.5em;
+    font-size: 12px;
+    color: #717171;
+}
+
+.share-form-label {
+    position: relative;
+    margin-right: 24px;
+}
+
+.content-frame {
+    padding: 32px $default-padding;
+}
+
+.property-header {
+    color: #131313;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: $michroma;
+
+    &__price::before {
+        content: "$";
+        color: rgb(0, 115, 255);
+        margin-right: 0.1em;
+    }
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 3em;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.share {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &-form {
+        &-label {
+            &__title {
+                color: #a4a4a4;
+                display: block;
+                font-family: $montserrat;
+                text-transform: uppercase;
+                font-size: 13px;
+                margin-bottom: 18px;
+                position: absolute;
+                top: -1.6em;
+            }
+
+            &__checkbox {
+                display: flex;
+            }
+        }
+
+        &__checkbox {
+            display: flex;
+            font-family: $montserrat;
+            font-size: 12px;
+            color: #717171;
+
+            &__input {
+                width: 20px;
+                height: 20px;
+                border-radius: 5px;
+                border: 1px solid $default-blue;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &-left {
+        max-width: 512px;
+    }
+
+    &-right {
+        margin-left: 5%;
+        width: 100%;
+    }
+
+    &__header {
+        font-family: $michroma;
+        font-weight: 400;
+    }
+
+    &__image {
+        max-width: 486px;
+        border-radius: 5px;
+    }
+}
+
+.share-form__checkbox + .medium {
+    margin-right: 24px;
+}
+
+.share-form__submit {
+    border: none;
+    outline: none;
+    padding: 2em;
+    width: 100%;
+    cursor: pointer;
+    background: #0073ff;
+    color: #fff;
+    font-size: 14px;
+    font-family: "Montserrat";
+    border-radius: 5px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.2s;
+
+    &:hover {
+        background: #2889ff;
+    }
+}
+
+.share-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.share-title h1 {
+    margin: auto;
+    font-family: "Michroma";
+    font-weight: 400;
+}
+
+.share-title__back-btn {
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.share-title__back-btn::before {
+    content: "";
+    transform: rotate(90deg);
+    display: inline-block;
+    background: url("/assets/vectors/arrow.svg") no-repeat;
+    width: 15px;
+    height: 8px;
+    position: relative;
+    top: -2px;
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+.share-form__checkbox {
+    margin-right: 24px;
+
+    &__text {
+        width: 60%;
+    }
+
+    &__input {
+        padding: 2px;
+        position: relative;
+        margin-right: 1.2em;
+
+        .share-form__checkbox__checkbox:checked + &::before {
+            content: "";
+            display: block;
+            border-radius: inherit;
+            width: 100%;
+            height: 100%;
+            background: #0073ff;
+        }
+    }
+}
+.info__address {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-family: $montserrat;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        width: 13px;
+        position: relative;
+        height: 19px;
+        background: url("/assets/vectors/map-mark.svg") no-repeat;
+        top: 3px;
+        margin-right: 0.5em;
+    }
+}
+
+.share-form__exchange-btn {
+    background: url("/assets/vectors/exchange.svg") no-repeat;
+    width: 22px;
+    height: 19px;
+    position: relative;
+    left: -11px;
+    top: -24px;
+    cursor: pointer;
+}
+
+.info__developers {
+    margin-top: 32px;
+
+    &__li {
+        margin-bottom: 24px;
+
+        &__description {
+            color: #a4a4a4;
+            font-family: $montserrat;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        &__content {
+            font-family: $montserrat;
+        }
+    }
+}
